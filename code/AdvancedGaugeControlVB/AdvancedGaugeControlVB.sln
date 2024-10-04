@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AdvancedGaugeControlVB", "AdvancedGaugeControlVB\AdvancedGaugeControlVB.vbproj", "{7FAE2152-A0D9-419F-A6D1-F413ECD2AD4B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TestClient", "TestClient\TestClient.vbproj", "{78A09B56-621E-4360-AB59-C382D6D16793}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7FAE2152-A0D9-419F-A6D1-F413ECD2AD4B}.Debug.ActiveCfg = Debug|.NET
+		{7FAE2152-A0D9-419F-A6D1-F413ECD2AD4B}.Debug.Build.0 = Debug|.NET
+		{7FAE2152-A0D9-419F-A6D1-F413ECD2AD4B}.Release.ActiveCfg = Release|.NET
+		{7FAE2152-A0D9-419F-A6D1-F413ECD2AD4B}.Release.Build.0 = Release|.NET
+		{78A09B56-621E-4360-AB59-C382D6D16793}.Debug.ActiveCfg = Debug|.NET
+		{78A09B56-621E-4360-AB59-C382D6D16793}.Debug.Build.0 = Debug|.NET
+		{78A09B56-621E-4360-AB59-C382D6D16793}.Release.ActiveCfg = Release|.NET
+		{78A09B56-621E-4360-AB59-C382D6D16793}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

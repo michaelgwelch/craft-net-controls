@@ -1,0 +1,468 @@
+
+<!-- saved from url=(0128)http://web.archive.org/web/20031011183816/http://www.fawcette.com/vsm/2002_06/magazine/columns/desktopdeveloper/default_pf.aspx# -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <BASE href="http://www.fawcette.com.wstub.archive.org/vsm/2002_06/magazine/columns/desktopdeveloper/default_pf.aspx"> --><BASE href=".">
+
+  
+  
+    <TITLE>Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance</TITLE>
+
+    <!-- Start META Tags -->
+     <META name="Keywords" content=".NET, VB.NET, C#, windows, forms, controls, inheritance, subclass, design-time, attribute, onpaint"><META name="DESCRIPTION" content="Create custom controls using inheritance to subclass the Control class. Add custom properties, methods, and events, and use attributes to provide design-time support."><META name="Author" content="Michael Welch"><META name="Issue" content="Visual Studio Magazine, June 2002">
+    <!-- End META Tags -->
+
+    <LINK rel="stylesheet" type="text/css" href="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/global.css">
+
+    <!-- Start Page Number Function -->
+        <!-----------------------------------------------------------------
+      This function builds the numbering scheme for multipage features.
+      It takes 2 parameters:
+      
+      currentPage  the page you are currently on (will not have a link)
+      totalPages   the total number of pages in this feature
+
+      
+      Usage Example:
+      
+      <script language="javascript">
+        buildPageNumbers(7, 10)
+      </script>
+    ------------------------------------------------------------------>
+
+    <STYLE type="text/css">
+    a.buildpagenumbersunderline
+    {
+      font: 10pt arial;
+      color: #003399;
+      text-decoration: underline
+    } 
+    
+    .buildpagenumbersbold
+    {
+      font: 10pt arial;
+      font-weight: bold;
+      color: #000000;
+      text-decoration: none
+    } 
+    </STYLE>
+
+    <SCRIPT language="javascript">
+      function buildPageNumbers(currentPage, totalPages)
+      {
+        <!-- If there is a previous page, display it -->
+        if(currentPage!=1)
+        { 
+          if (currentPage!=2)
+          {
+            document.write("<a href='page" + (currentPage-1) + ".asp' class='buildpagenumbersunderline'>Previous</a> ")
+          }
+          else
+          {
+            document.write("<a href='default.asp' class='buildpagenumbersunderline'>Previous</a> ")
+          }
+        }
+
+        <!-- Loop through the pages and build links -->
+        for(i=1; i<=totalPages; i++)
+        {
+          if (i==currentPage)
+          {
+            document.write("<span class='buildpagenumbersbold'>" + i + "</span> ")
+          }
+          else if (i!=1)
+          {
+            document.write("<a href='page" + i + ".asp' class='buildpagenumbersunderline'>" + i + "</a> ")
+          }
+          else
+          {
+            document.write("<a href='default.asp' class='buildpagenumbersunderline'>" + i + "</a> ")
+          }
+        } 
+
+        <!-- If there is a next page, display it -->
+        if(currentPage!=totalPages)
+        { 
+          document.write("<a href='page" + (currentPage+1) + ".asp' class='buildpagenumbersunderline'>Next</a>")
+        }
+      }      
+    </SCRIPT>
+    <!-- End Page Number Function -->
+
+    <SCRIPT language="JavaScript">
+    <!-- hide JavaScript
+    function openWindowRes()
+    {
+      popupWin = window.open('popup1.aspx', 'popup1', 'scrollbars,resizable,width=512,height=410')
+    }
+
+    function openWindow1() {  popupWin = window.open('sidebar1.aspx', 'sidebar1', 'scrollbars,resizable,width=640,height=480')
+   }
+   function openWindow2() {  popupWin = window.open('table1.aspx', 'table1', 'scrollbars,resizable,width=640,height=480')
+   }
+   function openWindow3() {  popupWin = window.open('fig1.aspx', 'fig1', 'scrollbars,resizable,width=640,height=480')
+   }
+   function openWindow4() {  popupWin = window.open('fig2.aspx', 'fig2', 'scrollbars,resizable,width=640,height=480')
+   }
+   function openWindow5() {  popupWin = window.open('fig3.aspx', 'fig3', 'scrollbars,resizable,width=640,height=480')
+   }
+   function openWindow6() {  popupWin = window.open('list1.aspx', 'list1', 'scrollbars,resizable,width=640,height=480')
+   }
+   function openWindow7() {  popupWin = window.open('list2.aspx', 'list2', 'scrollbars,resizable,width=640,height=480')
+   }
+
+    // done hiding -->
+    </SCRIPT>
+  </HEAD><BODY marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
+    <A name="top"></A>
+<FORM name="ftp_form" method="post" action="http://web.archive.org/web/20031011183816/default_pf.aspx" id="ftp_form">
+<INPUT type="hidden" name="__VIEWSTATE" value="dDwxNTc4Nzc2Nzc3Ozs+P748E+qOI8WTRGu1kUaojAcRiFQ=">
+
+
+
+    <!-- Start Outer Table -->
+	
+    <TABLE width="610" cellpadding="0" cellspacing="0" border="0">
+      <TBODY><TR>
+        <TD colspan="2">
+          <!-- Start Header Table -->
+
+<TABLE class="header" width="610" cellpadding="0" cellspacing="0" border="0" bgcolor="#333366">
+	<TBODY><TR>
+		<TD colspan="2" align="center"> <!-- Start Banner Ads -->
+			<TABLE cellpadding="0" cellspacing="0" bgcolor="#333366">
+				<TBODY><TR>
+					<TD width="468" height="60" valign="middle"> 
+					<!-- Start Banner 1 --> 
+						
+<TABLE border="0" cellspacing="0" cellpadding="0"><TBODY><TR><TD height="60">
+<SCRIPT language="JavaScript1.1" src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/;abr=!webtv;sz=468x60">
+</SCRIPT> 
+ 
+<SCRIPT> 
+
+if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0)  || navigator.userAgent.indexOf("WebTV")>= 0) {
+document.write('<A HREF="http://ad.doubleclick.net/jump/visualstudio.dart/;sz=468x60;ord=ord=20031011114137177?">');
+document.write('<IMG SRC="http://ad.doubleclick.net/ad/visualstudio.dart/;sz=468x60;ord=ord=20031011114137177?" border="0" height="60" width="468"></A>') 
+} 
+
+</SCRIPT> 
+
+<NOSCRIPT></NOSCRIPT>
+
+</TD></TR></TBODY></TABLE> 
+					<!-- End Banner 1 -->
+					</TD>
+				</TR>
+			</TBODY></TABLE> <!-- End Banner Ads -->
+		</TD>
+	</TR>
+	<TR valign="middle">
+		<TD width="205">
+			<A href="http://web.archive.org/web/20031011183816/http://www.fawcette.com/vsm/"><IMG src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/logo_vsm.gif" border="0"></A>
+		</TD>
+		<TD class="header">
+			&nbsp;
+		</TD>
+	</TR>
+</TBODY></TABLE> <!-- End Title Table -->
+
+<!-- End Header Table --></TD></TR>
+
+          <!-- Start Big Table Containing Leftnav, Main Content -->
+   
+            <TR>
+              <!-- Start left margin -->
+             <TD width="5">&nbsp;</TD>
+			 <!-- End left margin -->
+              <!--  Start Main Content Area -->
+              <TD width="440" valign="top">
+               <!-- Start Main Content Table -->
+                <TABLE width="605" cellpadding="0" cellspacing="0" border="0">
+                  <TBODY><TR>
+                    <TD valign="top">
+                 <IMG src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/spacer.gif" width="435" height="1" border="0">
+              
+                      <!-- Start Feature Article -->
+               
+					  <!-- Close Window -->
+			
+					       
+<TABLE width="178" border="0" cellspacing="0" cellpadding="0" align="right">
+	<TBODY><TR>
+		<TD>
+			
+<TABLE border="0" cellspacing="0" cellpadding="0"><TBODY><TR><TD height="39">
+<SCRIPT language="JavaScript1.1" src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/archive;abr=!webtv;sz=174x39">
+</SCRIPT> 
+ 
+<SCRIPT> 
+
+if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0)  || navigator.userAgent.indexOf("WebTV")>= 0) {
+document.write('<A HREF="http://ad.doubleclick.net/jump/visualstudio.dart/archive;sz=174x39;ord=ord=20031011114137177?">');
+document.write('<IMG SRC="http://ad.doubleclick.net/ad/visualstudio.dart/archive;sz=174x39;ord=ord=20031011114137177?" border="0" height="39" width="174"></A>') 
+} 
+
+</SCRIPT> 
+
+<NOSCRIPT></NOSCRIPT>
+
+</TD></TR></TBODY></TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<BR>
+			<SCRIPT language="JavaScript">
+				if(navigator.platform=="Win32"){
+	document.write("<table width='100' align='right' cellpadding='0' cellspacing='0'><tr><td>");
+	document.write("<a href='#' onClick='javascript:window.print();'><img src='/vsm/images/icon_printer.gif' height='18' width='18' border='0'></a></td>");
+document.write("<td class='black8pt'><a href='#' onClick='javascript:window.print();'>Print Article</a></td></tr></table>");
+	}</SCRIPT><TABLE width="100" align="right" cellpadding="0" cellspacing="0"><TBODY><TR><TD><A href="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance.htm" onclick="javascript:window.print();"><IMG src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/icon_printer.gif" height="18" width="18" border="0"></A></TD><TD class="black8pt"><A href="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance.htm" onclick="javascript:window.print();">Print Article</A></TD></TR></TBODY></TABLE>
+		</TD>
+	</TR>
+</TBODY></TABLE>
+
+
+
+                      <!-- ADD Content Here -->
+<P class="FeatureHead">Craft .NET Controls With Inheritance<BR>
+<SPAN class="FeatureDek">Not satisfied with .NET's canned controls? Use inheritance to build and draw your own custom controls.</SPAN><BR>
+<SPAN class="AboutAuthor"><EM>by Michael Welch</EM></SPAN></P><BR>
+<P><EM>Technology Toolbox: VB.NET, C#</EM></P>
+ 
+
+<P><SPAN class="DropCap">V</SPAN>B6 lets you use the UserControl designer to create your own controls, but you must write a lot of delegation code to wrap up constituent controls' properties and methods. .NET's object-oriented architecture lets you use inheritance to simplify the process of creating a control, allowing you to focus on the additional functionality you want to add instead of on delegation code. Take a look at this month's feature article, "<A href="http://web.archive.org/web/20031011183816/http://www.fawcette.com/vsm/2002_06/magazine/features/storage/" target="_blank">Subclass Controls in .NET</A>," to learn how to subclass an existing control.</P>
+
+&nbsp;<TABLE width="170" border="0" cellspacing="0" cellpadding="5" align="left">
+<TBODY><TR>
+<TD>
+<A href="javascript:openWindow3();">
+<IMG src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/f1thumb.gif" width="215" height="173" alt="" border="0">
+</A>
+</TD>
+<TD width="12" bgcolor="#FFFFFF"></TR>
+<TR>
+<TD class="black8pt">
+<SPAN class="FigureCap">Figure 1</SPAN> 
+<A href="javascript:openWindow3();">Follow These Steps.
+</A>
+<BR>
+</TD></TR>
+</TBODY></TABLE>
+
+   <P>I'll show you how to create a custom control by subclassing .NET's Control class and, more importantly, how to add design-time support so  your control behaves like the built-in controls (<A href="javascript:openWindow3();">see Figure 1</A>). You can download the full code listing for my sample Gauge control <A href="http://web.archive.org/web/20031011183816/http://www.fawcette.com/vsm/code/2002_06/vs0206dt.zip">here</A>.</P>
+   <P>All the controls in the .NET Framework inherit either directly or indirectly from the Control class. I've included a list of some of the common members of the Control class needed for this example (<A href="javascript:openWindow2();">see Table 1</A>). My Gauge control has three custom properties: Minimum, Maximum, and Value. The Gauge has a needle that varies its angle of rotation based on the current value (<A href="javascript:openWindow4();">see Figure 2</A>). </P>
+<TABLE width="170" border="0" cellspacing="0" cellpadding="5" align="right">
+
+<TBODY><TR><TD>
+<A href="javascript:openWindow4();">
+<IMG src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/f2thumb.gif" width="215" height="147" alt="" border="0">
+</A>
+</TD></TR><TR><TD width="12" bgcolor="#FFFFFF">
+</TR>
+<TR>
+<TD class="black8pt">
+<SPAN class="FigureCap">Figure 2</SPAN> 
+<A href="javascript:openWindow4();">Create a Gauge Control.
+</A>
+<BR>
+</TD></TR>
+</TBODY></TABLE>
+
+  	<P>To create your control, use Visual Studio to create a new project, and choose the Windows Control Library template. Name the project WindowsControls, and delete the UserControl file Visual Studio adds to the project by default. Add a new item to your project, and choose the Custom Control template. Name the file Gauge.vb. Locate the constructor, and set the ResizeRedraw property to True:
+
+</P><PRE class="codesnippet">Public Sub New()
+   MyBase.New()
+   ResizeRedraw = True
+End Sub</PRE><P></P>
+
+<P>If you leave out this step, your control gets messy when you resize it. Now create the custom properties (<A href="javascript:openWindow6();">see Listing 1</A>). The code for these properties is pretty straightforward, but I should mention two things. First, several attributes decorate each of these properties, which I'll explain later on. Second, each of these properties affects the display, so you need some way to force the control to redraw itself when a property is changed. You do this by calling the Invalidate method inside each property.</P>
+   <P>Visual Studio has already added OnPaint, a method of the Control class. The control calls this method whenever you do something that can alter the display of the control, such as resizing it or dragging another control over it. You need to override this method and place the code to draw your control in it. I've drawn a border, a baseline, and a needle for the Gauge control (<A href="javascript:openWindow7();">see Listing 2</A>).</P>
+<P><SPAN class="SubHead">Make Your Control Act Normally </SPAN><BR>
+At this point, you have a control with custom properties that knows how to draw itself. Now you need to include some normal behaviors your users are sure to expect. This is where design-time attributes come in. </P>
+
+&nbsp;<TABLE width="170" border="0" cellspacing="0" cellpadding="5" align="left">
+<TBODY><TR>
+<TD>
+<A href="javascript:openWindow5();">
+<IMG src="./Visual Studio Magazine - Desktop Developer - Craft .NET Controls With Inheritance_files/f3thumb.gif" width="215" height="156" alt="" border="0">
+</A>
+</TD>
+<TD width="12" bgcolor="#FFFFFF"></TR>
+<TR>
+<TD class="black8pt">
+<SPAN class="FigureCap">Figure 3</SPAN> 
+<A href="javascript:openWindow5();">Examine the Properties.
+</A>
+<BR>
+</TD></TR>
+</TBODY></TABLE>
+
+   <P>These attributes let you define how your control interacts with the Visual Studio environment. The property-level attributes used in this example specifically affect how your properties behave in the Properties window (<A href="javascript:openWindow5();">see Figure 3</A>). The Browsable attribute tells Visual Studio whether to display the property. My online sample code uses Browsable to hide the Text property from the Properties window. The Category attribute specifies the appropriate category for your property when the window is grouped by categories. The Description attribute provides the user of your control with a short description of how the property is used (<A href="javascript:openWindow6();">see Listing 1</A> again to view these attributes).</P>
+   <P>Examine a control's Properties window and you'll notice some values are in bold. Bold text means a property differs from its default value. You can reset a property back to its default value by right-clicking on the property name and choosing Reset from the shortcut menu. You usually do this with properties that define a DefaultValue attribute.</P> 
+<P>However, you can't use DefaultValue for properties of all data types. For complex property data types, you need to define a pair of public methods that accomplish the same thing: ShouldSerialize<EM>PropertyName</EM> and Reset<EM>PropertyName</EM>, where <EM>PropertyName</EM> is the name of your property. I illustrate this using the ForeColor property. The ShouldSerializeForeColor method returns true if the property differs from the default value. The ResetForeColor method sets the property back to its default value. You need to use the override keyword on this method because the Control class defines an implementation for it already:
+
+</P><PRE class="codesnippet">Public Function _
+   ShouldSerializeForeColor() As Boolean
+   Return Not MyBase.ForeColor.Equals( _ 
+      _defaultForeColor)
+End Function
+Public Overrides Sub ResetForeColor()
+   MyBase.ForeColor = _
+      _defaultForeColor
+End Sub</PRE><P></P>
+
+   <P>The RefereshProperties attribute tells Visual Studio your property might change the values of other properties, so Visual Studio should refresh the window whenever this property changes.</P>
+   <P>You can also define design-time attributes for your class:
+
+</P><PRE class="codesnippet">&lt;DefaultProperty("Value"), _
+   DefaultEvent("ValueChaged")&gt; _
+   Public Class Gauge</PRE><P></P>
+
+<P>The DefaultProperty attribute indicates which property gets the focus in the Properties window when you first create a control. This isn't the same concept as a default property in VB6, by the way. The DefaultEvent attribute indicates the default event. When you double-click on a control in the form designer, Visual Studio takes you to the code window and creates the stub for the default event's event handler automatically.</P>
+<P>Built-in controls expose events, and users of your control will expect it to follow suit, so I've added support for a ValueChanged event. It fires when the Value property changes. Define your event as being of type EventHandler, the default type to use if an event doesn't require special parameters:
+
+</P><PRE class="codesnippet">Public Event ValueChanged As _
+   EventHandler</PRE><P></P>
+
+<P>Then create a protected method called OnValueChanged, in which you raise this event:
+
+</P><PRE class="codesnippet">Protected Overridable Sub _
+   OnValueChanged(ByVal e As _
+   EventArgs)
+   RaiseEvent Changed(Me, e)
+End Sub</PRE><P></P>
+
+<P>Now refer back to the Value property definition and you'll see that you call the OnValueChanged method whenever the Value is changed. </P>
+   <P>The OnValueChanged method contains only one line of code. You could put that in the property definition instead, but MSDN recommends exposing events this way. Developers who want to inherit from your control and hook into your events can simply override the appropriate method (OnValueChanged, in this case). </P>
+<P>For example, if the user changes the ForeColor property either through code or by using the Properties window, you must redraw your control with the new color. By convention, the OnForeColorChanged method is called whenever the ForeColor has changed. You override this method and place a call to the Invalidate method in it. This forces a redraw whenever ForeColor changes:
+
+</P><PRE class="codesnippet">Protected Overrides Sub _
+   OnForeColorChanged(ByVal e As _
+   EventArgs)
+   MyBase.OnForeColorChanged(e)
+   Invalidate()
+End Sub</PRE><P></P>
+
+You must call the base class's version of OnForeColorChanged; otherwise, the ForeColorChanged event won't be raised.
+   <P>This covers the major steps in creating a control. Now all you need to do is compile your project and create a test app (see the sidebar, "<A href="javascript:openWindow1();">Gauge Your Success</A>").</P>
+	<BR>
+	<P>
+	<SPAN class="AboutAuthor">About the Author</SPAN><BR>
+	Michael Welch is an MCSD and a senior consultant with SysLogic Inc., an information and technology solutions company in Milwaukee. He and his wife Margaret are Wisconsin Badgers fans and enjoy football games at Camp Randall. Reach him at <A href="mailto:mwelch@syslogicinc.com">mwelch@syslogicinc.com</A>.</P>
+					
+
+                      
+                      <BR><BR>
+                      <!-- End Feature Article -->
+                    </TD>
+					
+                  </TR>
+                
+                  
+                </TBODY></TABLE>
+                <!-- End Main Content Table -->
+
+            
+
+           </TD>
+		  
+      </TR>
+    </TBODY></TABLE>
+
+    <!-- Start Footer Table -->
+    <TABLE width="610" cellpadding="0" cellspacing="0" border="0">
+      
+      <TBODY><TR>
+        <TD class="footer" colspan="3">
+          © Copyright 2001-2003
+          <A href="http://web.archive.org/web/20031011183816/http://www.fawcette.com/" class="footerbold">Fawcette Technical Publications</A>
+          |
+          <A href="http://web.archive.org/web/20031011183816/http://www.fawcette.com/privacy/default.asp" target="_blank" class="footerbold">Privacy Policy</A>
+          |
+          <A href="http://web.archive.org/web/20031011183816/http://www.fawcette.com/customerservice.asp" target="_blank" class="footerbold">Contact Us</A>
+        </TD>
+      </TR>
+    </TBODY></TABLE>
+    <!-- End Footer Table -->
+
+<!-- Begin CodePage Form -->
+<INPUT type="hidden" name="loccode" value="vs0206">
+<!-- End CodePage Form -->
+	
+	
+  </FORM>
+
+
+<!-- SOME SCRIPT SRC'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE WAYBACK MACHINE
+OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL INTEGRITY OF THE SESSION. -->
+
+
+<!-- SOME LINK HREF'S ON THIS PAGE HAVE BEEN REWRITTEN BY THE WAYBACK MACHINE
+OF THE INTERNET ARCHIVE IN ORDER TO PRESERVE THE TEMPORAL INTEGRITY OF THE SESSION. -->
+
+
+<SCRIPT language="Javascript">
+<!--
+
+// FILE ARCHIVED ON 20031011183816 AND RETRIEVED FROM THE
+// INTERNET ARCHIVE ON 20100429123929.
+// JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+// ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+// SECTION 108(a)(3)).
+
+   var sWayBackCGI = "http://web.archive.org/web/20031011183816/";
+
+   function xResolveUrl(url) {
+      var image = new Image();
+      image.src = url;
+      return image.src;
+   }
+   function xLateUrl(aCollection, sProp) {
+      var i = 0;
+      for(i = 0; i < aCollection.length; i++) {
+         var url = aCollection[i][sProp];         if (typeof(url) == "string") { 
+          if (url.indexOf("mailto:") == -1 &&
+             url.indexOf("javascript:") == -1
+             && url.length > 0) {
+            if(url.indexOf("http") != 0) {
+                url = xResolveUrl(url);
+            }
+            url = url.replace('.wstub.archive.org','');
+            aCollection[i][sProp] = sWayBackCGI + url;
+         }
+         }
+      }
+   }
+
+   xLateUrl(document.getElementsByTagName("IMG"),"src");
+   xLateUrl(document.getElementsByTagName("A"),"href");
+   xLateUrl(document.getElementsByTagName("AREA"),"href");
+   xLateUrl(document.getElementsByTagName("OBJECT"),"codebase");
+   xLateUrl(document.getElementsByTagName("OBJECT"),"data");
+   xLateUrl(document.getElementsByTagName("APPLET"),"codebase");
+   xLateUrl(document.getElementsByTagName("APPLET"),"archive");
+   xLateUrl(document.getElementsByTagName("EMBED"),"src");
+   xLateUrl(document.getElementsByTagName("BODY"),"background");
+   xLateUrl(document.getElementsByTagName("TD"),"background");
+   xLateUrl(document.getElementsByTagName("INPUT"),"src");
+   var forms = document.getElementsByTagName("FORM");
+   if (forms) {
+       var j = 0;
+       for (j = 0; j < forms.length; j++) {
+              f = forms[j];
+              if (typeof(f.action)  == "string") {
+                 if(typeof(f.method)  == "string") {
+                     if(typeof(f.method) != "post") {
+                        f.action = sWayBackCGI + f.action;
+                     }
+                  }
+              }
+        }
+    }
+
+
+//-->
+</SCRIPT>
+
+</BODY></HTML>

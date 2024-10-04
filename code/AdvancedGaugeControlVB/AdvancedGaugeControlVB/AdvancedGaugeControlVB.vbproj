@@ -1,15 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>7.0.9466</ProductVersion>
-    <SchemaVersion>1.0</SchemaVersion>
-    <ProjectGuid>{7FAE2152-A0D9-419F-A6D1-F413ECD2AD4B}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>AdvancedGaugeControlVB</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -17,19 +10,12 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionStrict>Off</OptionStrict>
-    <RootNamespace>AdvancedGaugeControlVB</RootNamespace>
     <StartupObject />
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
     <MyType>Windows</MyType>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>0.0</OldToolsVersion>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -37,17 +23,9 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
     <DefineConstants />
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>1</WarningLevel>
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
-    <DebugType>full</DebugType>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\</OutputPath>
@@ -56,61 +34,37 @@
     <ConfigurationOverrideFile />
     <DefineConstants />
     <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>1</WarningLevel>
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <DebugType>none</DebugType>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
+    <Reference Update="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.Data">
+    <Reference Update="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.Drawing">
+    <Reference Update="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
-    <Reference Include="System.Windows.Forms">
-      <Name>System.Windows.Forms</Name>
-    </Reference>
-    <Reference Include="System.Xml">
+    <Reference Update="System.Xml">
       <Name>System.XML</Name>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections" />
-    <Import Include="System.Data" />
-    <Import Include="System.Diagnostics" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.vb">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Gauge.vb">
+    <Compile Update="Gauge.vb">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Gauge.bmp" />
-    <EmbeddedResource Include="Gauge.resx">
-      <DependentUpon>Gauge.vb</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <PropertyGroup>
-    <PreBuildEvent />
-    <PostBuildEvent />
-  </PropertyGroup>
+  <PropertyGroup />
 </Project>
